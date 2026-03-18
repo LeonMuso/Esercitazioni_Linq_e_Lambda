@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="Action_e_Func/Action_e_Func.csproj" />
+  <Project Path="Calcolatrice_Flessibile/Calcolatrice_Flessibile.csproj" />
+  <Project Path="Progetto_Easy_Linq_Studente/Progetto_Easy_Linq_Studente.csproj" />
+</Solution>
