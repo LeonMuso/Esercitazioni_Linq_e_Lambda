@@ -7,7 +7,7 @@ namespace Progetto_Easy_Linq_Studente
 
     public class Esercizio1
     {
-        public static void Esegui()
+        public static void Main()
         {
             // 1 & 2. Inizializzazione della lista di studenti
             List<Studente> classe = new List<Studente>
@@ -26,13 +26,23 @@ namespace Progetto_Easy_Linq_Studente
             Console.WriteLine($"Media della classe: {mediaVoti:F2}");
 
             // 3b. Somma dei voti sufficienti
-            double sommaSufficienti = classe.Where(s => s.Voto >= 6).Sum(s => s.Voto);
+            double sommaSufficienti = classe
+                .Where(s => s.Voto >= 6)
+                .Sum(s => s.Voto);
+            
             Console.WriteLine($"Somma dei voti sufficienti: {sommaSufficienti}");
 
             // 3c. Studenti che devono recuperare
-            var daRecuperare = classe.Where(s => s.Voto < 6).Select(s => s.Nome);
-            Console.WriteLine("Studenti da recuperare: " + string.Join(", ", daRecuperare));
+            var daRecuperare = classe
+                .Where(s => s.Voto < 6);
+            Console.WriteLine("Studenti da recuperare: ");
+            foreach (var studente in daRecuperare)
+            {
+                Console.WriteLine($"- {studente.Nome} (Voto: {studente.Voto})");
+            }
+            
             Console.WriteLine();
         }
     }
+
 }
